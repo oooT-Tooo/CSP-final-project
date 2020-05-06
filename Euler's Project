@@ -1,15 +1,8 @@
 #Euler.py
 
-Dict = {0:0}
 def trinumber (n):
-    #objective: return the nth triangular number
-    if (n in Dict.keys()): 
-        #if the nth triangular number has already been saved in Dict, return it
-        return Dict[n]
-    else:
-        #if it hasn't been saved yet, create a new key with the value n + the (n-1)th triangular number
-        Dict[n]=trinumber(n-1)+n
-        return Dict[n]
+    #objective: return the nth triangular number (mathematically)
+    return int(n*(n+1)/2)
 
 if __name__=="__main__":
-    print( trinumber(7) )
+    print( trinumber(1) )

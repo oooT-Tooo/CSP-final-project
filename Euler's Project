@@ -7,11 +7,16 @@ def trinumber (n):
 def findFactors (n):
     #objective: return the number of factors the nth triangular number has
     x= trinumber(n) #x is the triangular number
-    f= sqrt(x) #f is a potential factor 
+    f= int(math.sqrt(x)) #f is a potential factor
+    # print(f)
     count=0
-    while (f>1):
-        if ( n%f ==0 ):
-            #checking if f is a factor
+    while (f>=1):
+        if ( x%f ==0 ):
+        #checking if f is a factor
+            # print(f)
+            count = count + 2 #counting this factor and its corresponding pair
+        f = f-1
+    return count
 
     
 

@@ -6,6 +6,8 @@ def trinumber (n):
 
 def findFactors (n):
     #objective: return the number of factors the nth triangular number has
+    if (n==1): #special case
+        return 1
     x= trinumber(n) #x is the triangular number
     f= int(math.sqrt(x)) #f is a potential factor
     # print(f)
@@ -18,7 +20,10 @@ def findFactors (n):
         f = f-1
     return count
 
-    
 
 if __name__=="__main__":
-    print( trinumber(1) )
+    divisors_count=0 #the number of divisors the current nth triangular number has
+    n=1 #n stands for the nth triangular number
+    while (divisors_count<500):
+        divisors_count(findFactors(n))
+        n=n+1

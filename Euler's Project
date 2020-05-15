@@ -3,7 +3,7 @@
 def trinumber (n):
     #objective: return the nth triangular number (mathematically)
     return int(n*(n+1)/2)
-
+   
 def findFactors (n):
     #objective: return the number of factors the nth triangular number has
     if (n==1): #special case
@@ -15,15 +15,18 @@ def findFactors (n):
     while (f>=1):
         if ( x%f ==0 ):
         #checking if f is a factor
-            # print(f)
-            count = count + 2 #counting this factor and its corresponding pair
+            if (f*f==x):
+                count= 1 # f times f only counts as one factor
+            else:
+                count = count + 2 #counting this factor and its corresponding pair
         f = f-1
     return count
-
 
 if __name__=="__main__":
     divisors_count=0 #the number of divisors the current nth triangular number has
     n=1 #n stands for the nth triangular number
     while (divisors_count<500):
-        divisors_count(findFactors(n))
+        #loop until the number of divisors for a nth triangular number exceeds 500
+        divisors_count=(findFactors(n))
         n=n+1
+    print (n-1)
